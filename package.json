@@ -1,0 +1,34 @@
+{
+  "name": "js-to-formdata",
+  "version": "1.0.0",
+  "description": "Convert javascript object to form data",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint {lib,test}/**/*.js",
+    "test": "./node_modules/.bin/mocha \"tests/*.spec.js\" --timeout 10000 --exit",
+    "coverage": "nyc --reporter html --reporter text --reporter=text-summary --all true npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alisonsm92/js-toformdata.git"
+  },
+  "author": "alisonsm92",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alisonsm92/js-toformdata/issues"
+  },
+  "homepage": "https://github.com/alisonsm92/js-toformdata#readme",
+  "dependencies": {
+    "form-data": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "chai-string": "^1.5.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1"
+  }
+}

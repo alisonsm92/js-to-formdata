@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint {lib,test}/**/*.js",
-    "test": "./node_modules/.bin/mocha \"tests/*.spec.js\" --timeout 10000 --exit",
+    "test": "./node_modules/.bin/mocha \"test/*.spec.js\" --timeout 10000 --exit",
     "coverage": "nyc --reporter html --reporter text --reporter=text-summary --all true npm run test"
   },
   "repository": {

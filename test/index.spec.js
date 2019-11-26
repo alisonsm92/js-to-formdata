@@ -1,7 +1,5 @@
 const chai = require('chai');
-const {
-    convertObjectToFormData,
-} = require('../index');
+const convertObjectToFormData = require('../index');
 
 const { assert } = chai;
 chai.use(require('chai-string'));
@@ -72,7 +70,7 @@ describe('Convert object to form data', () => {
         + ' even properties that contains array with values that are objects and non-objects',
     () => {
         const originalObject = {
-            items: ['firstItem', { arrayObjectProperty: 'value' }],
+            item: ['firstItem', { arrayObjectProperty: 'value' }],
             anotherProperty: 'value',
         };
 

@@ -18,6 +18,12 @@
     "url": "https://github.com/alisonsm92/js-toformdata/issues"
   },
   "homepage": "https://github.com/alisonsm92/js-toformdata#readme",
+  "keywords": [
+    "form",
+    "formdata",
+    "object-to-formdata",
+    "js-to-form"
+  ],
   "dependencies": {
     "form-data": "^3.0.0"
   },

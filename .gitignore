@@ -335,3 +335,6 @@ coverage
 
 # Mac OS
 .DS_Store
+
+# npmjs
+.npmrc

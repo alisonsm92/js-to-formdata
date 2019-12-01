@@ -1,7 +1,7 @@
-![](https://github.com/alisonsm92/js-to-formdata/workflows/Build/badge.svg)
-
-# js-to-formdata
+# js-to-formdata ![](https://github.com/alisonsm92/js-to-formdata/workflows/Build/badge.svg)
 Module that makes it possible and easy for you to convert nested javascript objects directly to [Form-Data](https://www.npmjs.com/package/form-data).
+
+Supports objects with property values of the [primitives javascript types](https://javascript.info/types), as well as arrays, buffers and file streams.
 
 ## Install
 
@@ -137,4 +137,23 @@ axios.post('http://example.com', form, {
 })
 .then(response => response)
 .catch(error => error)
+```
+
+### Custom options
+You can use custom options [Form-Data](https://www.npmjs.com/package/), passing to function module an instance of FormData with the already defined options.
+
+Example:
+
+```javascript
+const FormData = require('form-data');
+const convertObjectToFormData = require('js-to-formdata');
+
+const form = new FormData({ maxDataSize: 20971520 });
+
+const originalObject = {
+    property: 'value',
+};
+
+const formData = convertObjectToFormData(originalObject, { form });
+
 ```

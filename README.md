@@ -1,9 +1,7 @@
 ![](https://github.com/alisonsm92/js-to-formdata/workflows/Build/badge.svg)
 
 # js-to-formdata
-Function that converts the javascript object to an instance of [Form-Data](https://www.npmjs.com/package/form-data).
-
-Making it possible and easy for you to convert nested objects directly to single-depth form data.
+Module that makes it possible and easy for you to convert nested javascript objects directly to [Form-Data](https://www.npmjs.com/package/form-data).
 
 ## Install
 

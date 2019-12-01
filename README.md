@@ -74,7 +74,7 @@ form.append('anotherProperty', 'value');
 
 ### Integration with other libraries
 
-Use as exemplified by [Form-Data](https://www.npmjs.com/package/ documentation.
+Use as exemplified by [Form-Data](https://www.npmjs.com/package/) documentation.
 
 #### Request
 

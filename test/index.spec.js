@@ -114,7 +114,19 @@ describe('Convert object to form data', () => {
     });
 
     it('Should return a form data containing the original object properties,'
-    + ' ignoring properties that contains a function', () => {
+        + ' even properties that contains a Symbol', () => {
+        const originalObject = {
+            propertySymbol: Symbol('value'),
+        };
+
+        const formData = convertObjectToFormData(originalObject);
+        const formDataString = formData.getBuffer().toString();
+
+        assert.include(formDataString, 'name="propertySymbol"\r\n\r\nSymbol(value)');
+    });
+
+    it('Should return a form data containing the original object properties,'
+    + ' ignoring properties that contains not supported types', () => {
         const originalObject = {
             property: 'value',
             propertyFunction: () => {},

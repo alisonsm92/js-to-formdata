@@ -1,4 +1,7 @@
-# js-to-formdata ![](https://github.com/alisonsm92/js-to-formdata/workflows/CI/badge.svg) <span class="badge-npmversion"><a href="https://npmjs.org/package/js-to-formdata" title="View this project on NPM"><img src="https://img.shields.io/npm/v/js-to-formdata.svg" alt="NPM version" /></a></span> <span class="badge-npmdownloads"><a href="https://npmjs.org/package/js-to-formdata" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/js-to-formdata.svg" alt="NPM downloads" /></a></span>
+# js-to-formdata 
+![](https://github.com/alisonsm92/js-to-formdata/workflows/CI/badge.svg)
+<span class="badge-npmversion"><a href="https://npmjs.org/package/js-to-formdata" title="View this project on NPM"><img src="https://img.shields.io/npm/v/js-to-formdata.svg" alt="NPM version" /></a></span>
+<span class="badge-npmdownloads"><a href="https://npmjs.org/package/js-to-formdata" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/js-to-formdata.svg" alt="NPM downloads" /></a></span>
 
 Module that makes it possible and easy for you to convert nested javascript objects directly to [Form-Data](https://www.npmjs.com/package/form-data).
 

@@ -4,6 +4,7 @@
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/js-to-formdata" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/js-to-formdata.svg" alt="NPM downloads" /></a></span>
 [![Coverage Status](https://coveralls.io/repos/github/alisonsm92/js-to-formdata/badge.svg?branch=test-dev-dependencies)](https://coveralls.io/github/alisonsm92/js-to-formdata?branch=test-dev-dependencies)
 
+
 Module that makes it possible and easy for you to convert nested javascript objects directly to [Form-Data](https://www.npmjs.com/package/form-data).
 
 Supports objects with property values of the [primitives javascript types](https://javascript.info/types), as well as arrays, buffers and file streams.

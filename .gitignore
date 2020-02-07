@@ -338,3 +338,6 @@ coverage
 
 # npmjs
 .npmrc
+
+# Coveralls
+.coveralls.yml

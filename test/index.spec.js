@@ -7,38 +7,34 @@ const { assert } = chai;
 chai.use(require('chai-string'));
 
 describe('Convert object to form data', () => {
-    it('Should return a form data containing the original object properties',
-        () => {
-            const originalObject = {
-                property: 'value',
-                anotherProperty: 'value',
-            };
+    it('Should return a form data containing the original object properties', () => {
+        const originalObject = {
+            property: 'value',
+            anotherProperty: 'value',
+        };
 
-            const formData = convertObjectToFormData(originalObject);
-            const formDataString = formData.getBuffer().toString();
+        const formData = convertObjectToFormData(originalObject);
+        const formDataString = formData.getBuffer().toString();
 
-            Object.keys(originalObject).forEach((property) => {
-                assert.include(
-                    formDataString, `name="${property}"\r\n\r\n${originalObject[property]}`,
-                );
-            });
+        Object.keys(originalObject).forEach((property) => {
+            assert.include(formDataString, `name="${property}"\r\n\r\n${originalObject[property]}`);
         });
+    });
 
-    it('Should return a form data containing the original object properties, even nested properties',
-        () => {
-            const originalObject = {
-                property: {
-                    nestedProperty: 'value',
-                },
-                anotherProperty: 'value',
-            };
+    it('Should return a form data containing the original object properties, even nested properties', () => {
+        const originalObject = {
+            property: {
+                nestedProperty: 'value',
+            },
+            anotherProperty: 'value',
+        };
 
-            const formData = convertObjectToFormData(originalObject);
-            const formDataString = formData.getBuffer().toString();
+        const formData = convertObjectToFormData(originalObject);
+        const formDataString = formData.getBuffer().toString();
 
-            assert.include(formDataString, 'name="propertyNestedProperty"\r\n\r\nvalue');
-            assert.include(formDataString, 'name="anotherProperty"\r\n\r\nvalue');
-        });
+        assert.include(formDataString, 'name="propertyNestedProperty"\r\n\r\nvalue');
+        assert.include(formDataString, 'name="anotherProperty"\r\n\r\nvalue');
+    });
 
     it('Should return a form data containing the original object properties,'
     + ' even properties that contains array of objects', () => {
@@ -69,8 +65,7 @@ describe('Convert object to form data', () => {
     });
 
     it('Should return a form data containing the original object properties,'
-        + ' even properties that contains array with values that are objects and non-objects',
-    () => {
+        + ' even properties that contains array with values that are objects and non-objects', () => {
         const originalObject = {
             item: ['firstItem', { arrayObjectProperty: 'value' }],
             anotherProperty: 'value',

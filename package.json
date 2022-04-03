@@ -1,6 +1,6 @@
 {
   "name": "js-to-formdata",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Function that converts the javascript object to an instance of Form-data",
   "main": "index.js",
   "scripts": {

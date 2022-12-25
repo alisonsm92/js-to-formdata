@@ -95,7 +95,7 @@ const originalObject = {
 
 const formData = convertObjectToFormData(originalObject);
 
-request.post({url:'http://service.com/upload', formData: formData}, function(err, httpResponse, body) {
+request.post({ url:'http://service.com/upload', formData }, function(err, httpResponse, body) {
   if (err) {
     return console.error('upload failed:', err);
   }
@@ -116,7 +116,7 @@ const originalObject = {
 
 const formData = convertObjectToFormData(originalObject);
 
-fetch('http://example.com', { method: 'POST', body: form })
+fetch('http://example.com', { method: 'POST', body: formData })
     .then(function(res) {
         return res.json();
     }).then(function(json) {
@@ -136,7 +136,7 @@ const originalObject = {
 
 const formData = convertObjectToFormData(originalObject);
 
-axios.post('http://example.com', form, {
+axios.post('http://example.com', formData, {
   headers: {
     ...formHeaders,
   },

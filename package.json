@@ -4,8 +4,8 @@
   "description": "Function that converts the javascript object to an instance of Form-data",
   "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint {lib,test}/**/*.js",
-    "test": "./node_modules/.bin/mocha \"test/*.spec.js\" --timeout 10000 --exit",
+    "lint": "eslint {lib,test}/**/*.js",
+    "test": "jest",
     "coverage": "nyc npm test && nyc report --reporter=lcov --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -29,15 +29,13 @@
   },
   "devDependencies": {
     "@types/mocha": "^10.0.1",
-    "chai": "^4.3.7",
-    "chai-string": "^1.5.0",
     "coveralls": "^3.1.1",
     "eslint": "^8.36.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "husky": "^8.0.3",
+    "jest": "^30.3.0",
     "lint-staged": "^13.2.0",
-    "mocha": "^10.2.0",
     "nyc": "^15.1.0"
   }
 }

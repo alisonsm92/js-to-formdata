@@ -18,5 +18,15 @@
             "error",
             4
         ]
+    },
+  "overrides": [
+    {
+      "files": [
+        "**/*.spec.js"
+      ],
+      "env": {
+        "jest": true
+      }
     }
+  ]
 }

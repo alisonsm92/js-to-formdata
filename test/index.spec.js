@@ -1,10 +1,6 @@
 // @ts-nocheck
-const chai = require('chai');
 const fs = require('fs');
 const convertObjectToFormData = require('../index');
-
-const { assert } = chai;
-chai.use(require('chai-string'));
 
 describe('Convert object to form data', () => {
     it('Should return a form data containing the original object properties', () => {
@@ -17,7 +13,7 @@ describe('Convert object to form data', () => {
         const formDataString = formData.getBuffer().toString();
 
         Object.keys(originalObject).forEach((property) => {
-            assert.include(formDataString, `name="${property}"\r\n\r\n${originalObject[property]}`);
+            expect(formDataString).toContain(`name="${property}"\r\n\r\n${originalObject[property]}`);
         });
     });
 
@@ -32,8 +28,8 @@ describe('Convert object to form data', () => {
         const formData = convertObjectToFormData(originalObject);
         const formDataString = formData.getBuffer().toString();
 
-        assert.include(formDataString, 'name="propertyNestedProperty"\r\n\r\nvalue');
-        assert.include(formDataString, 'name="anotherProperty"\r\n\r\nvalue');
+        expect(formDataString).toContain('name="propertyNestedProperty"\r\n\r\nvalue');
+        expect(formDataString).toContain('name="anotherProperty"\r\n\r\nvalue');
     });
 
     it('Should return a form data containing the original object properties,'
@@ -46,8 +42,8 @@ describe('Convert object to form data', () => {
         const formData = convertObjectToFormData(originalObject);
         const formDataString = formData.getBuffer().toString();
 
-        assert.include(formDataString, 'name="itemProperty1"\r\n\r\nvalue');
-        assert.include(formDataString, 'name="anotherProperty"\r\n\r\nvalue');
+        expect(formDataString).toContain('name="itemProperty1"\r\n\r\nvalue');
+        expect(formDataString).toContain('name="anotherProperty"\r\n\r\nvalue');
     });
 
     it('Should return a form data containing the original object properties,'
@@ -60,8 +56,8 @@ describe('Convert object to form data', () => {
         const formData = convertObjectToFormData(originalObject);
         const formDataString = formData.getBuffer().toString();
 
-        assert.include(formDataString, 'name="items"\r\n\r\n["firstItem","secondItem"]');
-        assert.include(formDataString, 'name="anotherProperty"\r\n\r\nvalue');
+        expect(formDataString).toContain('name="items"\r\n\r\n["firstItem","secondItem"]');
+        expect(formDataString).toContain('name="anotherProperty"\r\n\r\nvalue');
     });
 
     it('Should return a form data containing the original object properties,'
@@ -74,9 +70,9 @@ describe('Convert object to form data', () => {
         const formData = convertObjectToFormData(originalObject);
         const formDataString = formData.getBuffer().toString();
 
-        assert.include(formDataString, 'name="item1"\r\n\r\nfirstItem');
-        assert.include(formDataString, 'name="itemArrayObjectProperty2"\r\n\r\nvalue');
-        assert.include(formDataString, 'name="anotherProperty"\r\n\r\nvalue');
+        expect(formDataString).toContain('name="item1"\r\n\r\nfirstItem');
+        expect(formDataString).toContain('name="itemArrayObjectProperty2"\r\n\r\nvalue');
+        expect(formDataString).toContain('name="anotherProperty"\r\n\r\nvalue');
     });
 
     it('Should return a form data containing the original object properties,'
@@ -88,8 +84,7 @@ describe('Convert object to form data', () => {
         const formData = convertObjectToFormData(originalObject);
         const formDataString = formData.getBuffer().toString();
 
-        assert.include(
-            formDataString,
+        expect(formDataString).toContain(
             'name="propertyBuffer"\r\nContent-Type: application/octet-stream\r\n\r\nvalue',
         );
     });
@@ -104,8 +99,8 @@ describe('Convert object to form data', () => {
         // eslint-disable-next-line dot-notation
         const formDataString = formData['_streams'][0].toString();
 
-        assert.include(formDataString, 'name="propertyStream"');
-        assert.include(formDataString, 'Content-Type: image/png');
+        expect(formDataString).toContain('name="propertyStream"');
+        expect(formDataString).toContain('Content-Type: image/png');
     });
 
     it('Should return a form data containing the original object properties,'
@@ -117,7 +112,7 @@ describe('Convert object to form data', () => {
         const formData = convertObjectToFormData(originalObject);
         const formDataString = formData.getBuffer().toString();
 
-        assert.include(formDataString, 'name="propertySymbol"\r\n\r\nSymbol(value)');
+        expect(formDataString).toContain('name="propertySymbol"\r\n\r\nSymbol(value)');
     });
 
     it('Should return a form data containing the original object properties,'
@@ -130,7 +125,7 @@ describe('Convert object to form data', () => {
         const formData = convertObjectToFormData(originalObject);
         const formDataString = formData.getBuffer().toString();
 
-        assert.include(formDataString, 'name="property"\r\n\r\nvalue');
-        assert.notInclude(formDataString, 'name="propertyFunction"');
+        expect(formDataString).toContain('name="property"\r\n\r\nvalue');
+        expect(formDataString).not.toContain('name="propertyFunction"');
     });
 });

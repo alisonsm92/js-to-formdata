@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint {lib,test}/**/*.js",
     "test": "jest",
-    "coverage": "nyc npm test && nyc report --reporter=lcov --reporter=text-lcov | coveralls"
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
